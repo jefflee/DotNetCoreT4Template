@@ -28,9 +28,28 @@ namespace DotNetCoreT4Template.T4
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("\r\n{\r\n  \"Couchbase\": {\r\n    \"ConnectionString\": \"http://couchbase:1000\"    \r\n  },\r" +
-                    "\n  \"ApiInfo\": {\r\n    \"ApplicationName\": \"MyService\",\r\n    \"Guid\": \"6ba678bc-a832" +
-                    "-4c40-822e-bb0af237e420\"    \r\n  }\r\n}");
+            this.Write("\r\n{\r\n  \"Couchbase\": {\r\n    \"ConnectionString\": \"");
+            
+            #line 9 "C:\Git\MyGitHub\DotNetCoreT4Template\Code\DotNetCoreT4Template\T4\AppSettingsT4.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(_connectionStirng));
+            
+            #line default
+            #line hidden
+            this.Write("\"    \r\n  },\r\n  \"ApiInfo\": {\r\n    \"ApplicationName\": \"");
+            
+            #line 12 "C:\Git\MyGitHub\DotNetCoreT4Template\Code\DotNetCoreT4Template\T4\AppSettingsT4.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(_appName));
+            
+            #line default
+            #line hidden
+            this.Write("\",\r\n    \"Guid\": \"");
+            
+            #line 13 "C:\Git\MyGitHub\DotNetCoreT4Template\Code\DotNetCoreT4Template\T4\AppSettingsT4.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Guid.NewGuid().ToString()));
+            
+            #line default
+            #line hidden
+            this.Write("\"    \r\n  }\r\n}");
             return this.GenerationEnvironment.ToString();
         }
     }

@@ -1,5 +1,4 @@
-﻿<#@ template visibility="internal" #>
-<#@ template language="C#" #>
+﻿<#@ template visibility="internal" language="C#" #>
 <#@ assembly name="System.Core" #>
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
@@ -7,10 +6,10 @@
 
 {
   "Couchbase": {
-    "ConnectionString": "http://couchbase:1000"    
+    "ConnectionString": "<#= _connectionStirng #>"    
   },
   "ApiInfo": {
-    "ApplicationName": "MyService",
-    "Guid": "6ba678bc-a832-4c40-822e-bb0af237e420"    
+    "ApplicationName": "<#= _appName #>",
+    "Guid": "<#= Guid.NewGuid().ToString() #>"    
   }
 }
